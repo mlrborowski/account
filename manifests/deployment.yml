@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mlrborowskiaccount 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlrborowskiaccount
+  template:
+    metadata:
+      labels:
+        app: mlrborowskiaccount 
+    spec:
+      containers:
+        - name: mlrborowskiaccount 
+          image: stocktraderreg.azurecr.io/mlrborowskiaccount
+          ports:
+          - containerPort: 80
